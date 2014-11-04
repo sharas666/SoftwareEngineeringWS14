@@ -10,7 +10,7 @@ euroToRupeeConverter::euroToRupeeConverter()
  *Out: Rupee value of input Euros as of 04.11.14
  */
 double euroToRupeeConverter::convert(double inputEuros){
-  return inputEuros*1;
+  return inputEuros * 76.83;
 }
 
 std::string euroToRupeeConverter::toString() const{

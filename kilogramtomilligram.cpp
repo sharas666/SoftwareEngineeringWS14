@@ -10,7 +10,7 @@ kilogramToMilligramConverter::kilogramToMilligramConverter()
  *Out: Milligram value of input Kilogram as of 04.11.14
  */
 double kilogramToMilligramConverter::convert(double inputKilogram){
-  return inputKilogram*1;
+  return inputKilogram * 1000000;
 }
 
 std::string kilogramToMilligramConverter::toString() const{

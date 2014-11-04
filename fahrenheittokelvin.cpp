@@ -10,7 +10,7 @@ fahrenheitToKelvinConverter::fahrenheitToKelvinConverter()
  *Out: Kelvin value of input fahrenheit as of 04.11.14
  */
 double fahrenheitToKelvinConverter::convert(double inputFahrenheit){
-  return inputFahrenheit*1;
+  return (inputFahrenheit + 459.67) / 1.8;
 }
 
 std::string fahrenheitToKelvinConverter::toString() const{
