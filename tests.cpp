@@ -59,3 +59,22 @@ int test_kilogram_to_centner()
 	TINYTEST_EQUAL(0.069, k.convert(3.48));
 	TINYTEST_EQUAL(-0.069, k.convert(-3.48)); // possible?
 }
+
+TINYTEST_START_SUITE(Money);
+	TINYTEST_ADD_TEST(test_dollar_to_euro);
+	TINYTEST_ADD_TEST(test_euro_to_rupee);
+TINYTEST_END_SUITE();
+
+TINYTEST_START_SUITE(Temperature);
+	TINYTEST_ADD_TEST(test_celsius_to_fahrenheit);
+	TINYTEST_ADD_TEST(test_fahrenheit_to_kelvin);
+TINYTEST_END_SUITE();
+
+TINYTEST_START_SUITE(Weight);
+	TINYTEST_ADD_TEST(test_kilogram_to_milligram);
+	TINYTEST_ADD_TEST(test_kilogram_to_centner);
+TINYTEST_END_SUITE();
+
+TINYTEST_MAIN_SINGLE_SUITE(Money);
+TINYTEST_MAIN_SINGLE_SUITE(Temperature);
+TINYTEST_MAIN_SINGLE_SUITE(Weight);
