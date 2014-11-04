@@ -1,4 +1,9 @@
+#include "celsiustofahrenheitconverter.hpp"
 #include "dollartoeuroconverter.hpp"
+#include "eurotorupeeconverter.hpp"
+#include "fahrenheittokelvinconverter.hpp"
+#include "kilogramtomilligramconverter.hpp"
+#include "kilogramtocentnerconverter.hpp"
 
 int main(int argc, char* argv[])
 {
