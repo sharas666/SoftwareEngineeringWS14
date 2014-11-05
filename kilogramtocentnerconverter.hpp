@@ -3,7 +3,7 @@
 
 #include "weightconverter.hpp"
 
-class kilogramToCentnerConverter : public Moneyconverter
+class kilogramToCentnerConverter : public Weightconverter
 {
   public:
     kilogramToCentnerConverter();

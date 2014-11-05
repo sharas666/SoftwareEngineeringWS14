@@ -3,7 +3,7 @@
 
 #include "temperatureconverter.hpp"
 
-class fahrenheitToKelvinConverter : public Moneyconverter
+class fahrenheitToKelvinConverter : public Temperatureconverter
 {
   public:
     fahrenheitToKelvinConverter();

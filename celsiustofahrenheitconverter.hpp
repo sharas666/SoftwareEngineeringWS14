@@ -3,7 +3,7 @@
 
 #include "temperatureconverter.hpp"
 
-class celsiusToFahrenheitConverter : public Moneyconverter
+class celsiusToFahrenheitConverter : public Temperatureconverter
 {
   public:
     celsiusToFahrenheitConverter();

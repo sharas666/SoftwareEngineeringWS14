@@ -3,7 +3,7 @@
 
 #include "weightconverter.hpp"
 
-class kilogramToMilligramConverter : public Moneyconverter
+class kilogramToMilligramConverter : public Weightconverter
 {
   public:
     kilogramToMilligramConverter();
