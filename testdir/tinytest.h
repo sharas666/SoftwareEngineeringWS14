@@ -54,11 +54,25 @@ typedef struct TinyTestRegistryStruct
 
 #ifndef TINYTEST_NOTESTING
 
+#define EPSILON 0.01                                                 
+
+#define TINYTEST_EQUAL_EPSILON_MSG(expected, actual,msg)                \
+  if ( (expected) - (actual) > EPSILON)                                 \
+  {                                                                     \
+    printf("%s:%d expected %s, actual: %f\n",                           \
+           __FILE__, __LINE__, #expected, actual);                      \
+    if ( msg ) printf(msg);                                             \
+    return 0;                                                           \
+  }
+
+#define TINYTEST_EQUAL_EPSILON(expected, actual)                        \
+  TINYTEST_EQUAL_EPSILON_MSG(expected, actual, " ")
+
 #define TINYTEST_EQUAL_MSG(expected, actual, msg)                       \
   if ( (expected) != (actual) )                                         \
   {                                                                     \
-    printf("%s:%d expected %s, actual: %f\n",                           \
-           __FILE__, __LINE__, #expected, actual);                     \
+    printf("%s:%d expected %s, actual: %s\n",                           \
+           __FILE__, __LINE__, #expected, #actual);                     \
     if ( msg ) printf(msg);                                             \
     return 0;                                                           \
   }
