@@ -11,7 +11,7 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 	g++ -std=c++0x -Wall -c -o $@ $<
 
 test:
-	g++ -std=c++0x -o testdir/tests testdir/tests.cpp converter.cpp celsiustofahrenheitconverter.cpp dollartoeuroconverter.cpp eurotorupeeconverter.cpp fahrenheittokelvinconverter.cpp kilogramtomilligramconverter.cpp kilogramtocentnerconverter.cpp weightconverter.cpp moneyconverter.cpp temperatureconverter.cpp
+	g++ -std=c++0x -o testdir/tests testdir/tests.cpp converter.cpp celsiustofahrenheitconverter.cpp dollartoeuroconverter.cpp eurotorupeeconverter.cpp fahrenheittokelvinconverter.cpp kilogramtomilligramconverter.cpp kilogramtocentnerconverter.cpp weightconverter.cpp moneyconverter.cpp temperatureconverter.cpp converterFactory.cpp
 	./main DollarToEuro 10000
 	./main EuroToRupee -4
 	./main CelsiusToFahrenheit 80

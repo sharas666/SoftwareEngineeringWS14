@@ -4,13 +4,16 @@
 #include "fahrenheittokelvinconverter.hpp"
 #include "kilogramtomilligramconverter.hpp"
 #include "kilogramtocentnerconverter.hpp"
+#include "converterFactory.hpp"
 
 int main(int argc, char* argv[])
 {
   std::string conversion = argv[1];
   std::string value = argv[2];
 
-  if (conversion == "DollarToEuro")
+  ConverterFactory* f;
+  f = f->instance();
+  /*if (conversion == "DollarToEuro")
   {
     dollarToEuroConverter* myConverter = new dollarToEuroConverter();
     double valueDollars = std::stod(value);
@@ -57,7 +60,7 @@ int main(int argc, char* argv[])
     double valueCentner = myConverter->convert(valueKilogram);
     std::cout << myConverter->toString() << " has converted "<< valueKilogram << " Kilogram to " << valueCentner <<" Centner!"<<std::endl;
   }
-
+*/
   
   return 0;
 }
