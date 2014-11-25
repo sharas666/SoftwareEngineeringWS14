@@ -13,6 +13,8 @@ int main(int argc, char* argv[])
 
   ConverterFactory* f;
   f = f->instance();
+
+  //auto irgendwas = f.create(conversion);
   /*if (conversion == "DollarToEuro")
   {
     dollarToEuroConverter* myConverter = new dollarToEuroConverter();
