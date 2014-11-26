@@ -15,7 +15,6 @@ int main(int argc, char* argv[])
   cFactory = cFactory->instance();
   double output = cFactory->create(input)->convert(value); 
   std::cout << output << std::endl;
-
   
   return 0;
 }

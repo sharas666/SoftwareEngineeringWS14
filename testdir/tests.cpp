@@ -73,6 +73,18 @@ int test_kilogram_to_centner()
 	return 1;
 }
 
+int test_kilogram_to_centner()
+{
+	ConverterFactory* cFactory;
+	cFactory = cFactory->instance();
+	auto c1 = cFactory->create(cToF);
+	auto c2 = cFactory->create(cToF);
+	TINYTEST_CHECK(c1 =! c2);
+
+	return 1;
+}
+
+
 TINYTEST_START_SUITE(Money);
 	TINYTEST_ADD_TEST(test_dollar_to_euro);
 	TINYTEST_ADD_TEST(test_euro_to_rupee);
