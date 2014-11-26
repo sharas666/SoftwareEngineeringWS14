@@ -14,16 +14,16 @@ ConverterFactory* ConverterFactory::s_instance = NULL;
 ConverterFactory::ConverterFactory() : m{}
 {
 	m.insert(std::make_pair("cToF", cToF));
-	m.insert(std::make_pair("dToC", dToC));
+	m.insert(std::make_pair("dToE", dToC));
 	m.insert(std::make_pair("eToR", eToR));
 	m.insert(std::make_pair("fToK", fToK));
 	m.insert(std::make_pair("kToC", kToC));
 	m.insert(std::make_pair("kToM", kToM));
 }	
 
-std::shared_ptr<converter> ConverterFactory::create(std::string const& s) const
+std::shared_ptr<converter> ConverterFactory::create(std::string const& s)
 {
-	return nullptr;
+	return m[s]();
 }
 
 ConverterFactory* ConverterFactory::instance()

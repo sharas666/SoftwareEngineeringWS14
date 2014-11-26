@@ -12,12 +12,12 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 test:
 	g++ -std=c++0x -o testdir/tests testdir/tests.cpp converter.cpp celsiustofahrenheitconverter.cpp dollartoeuroconverter.cpp eurotorupeeconverter.cpp fahrenheittokelvinconverter.cpp kilogramtomilligramconverter.cpp kilogramtocentnerconverter.cpp weightconverter.cpp moneyconverter.cpp temperatureconverter.cpp converterFactory.cpp
-	./main DollarToEuro 10000
-	./main EuroToRupee -4
-	./main CelsiusToFahrenheit 80
-	./main FahrenheitToKelvin 5
-	./main KilogramToMilligram 0.1
-	./main KilogramToCentner 300
+	./main dToE 10000
+	./main eToR -4
+	./main cToF 80
+	./main fToK 5
+	./main kToM 0.1
+	./main kToC 300
 	./testdir/tests
 
 clean:

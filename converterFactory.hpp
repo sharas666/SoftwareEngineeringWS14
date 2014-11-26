@@ -9,7 +9,7 @@
 class ConverterFactory
 {
   public:
-    std::shared_ptr<converter> create(std::string const&) const;
+    std::shared_ptr<converter> create(std::string const&);
     static ConverterFactory* instance();
 
     static std::shared_ptr<converter> cToF();
