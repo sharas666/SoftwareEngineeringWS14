@@ -9,6 +9,7 @@
 #include "../fahrenheittokelvinconverter.hpp"
 #include "../kilogramtomilligramconverter.hpp"
 #include "../kilogramtocentnerconverter.hpp"
+#include "../converterFactory.hpp"
 
 TINYTEST_DECLARE_SUITE(Money);
 TINYTEST_DECLARE_SUITE(Temperature);
