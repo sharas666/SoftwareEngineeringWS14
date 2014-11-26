@@ -73,13 +73,25 @@ int test_kilogram_to_centner()
 	return 1;
 }
 
-int test_kilogram_to_centner()
+int test_singleton()
+{
+	ConverterFactory* cFactory1;
+	ConverterFactory* cFactory2;
+
+	cFactory1 = cFactory1->instance();
+	cFactory2 = cFactory2->instance();
+	TINYTEST_ASSERT(cFactory1 == cFactory2);
+
+	return 1;
+}
+
+int test_factory()
 {
 	ConverterFactory* cFactory;
 	cFactory = cFactory->instance();
-	auto c1 = cFactory->create(cToF);
-	auto c2 = cFactory->create(cToF);
-	TINYTEST_CHECK(c1 =! c2);
+	auto c1 = cFactory->create("cToF");
+	auto c2 = cFactory->create("cToF");
+	TINYTEST_ASSERT(c1 != c2);
 
 	return 1;
 }
@@ -100,8 +112,14 @@ TINYTEST_START_SUITE(Weight);
 	TINYTEST_ADD_TEST(test_kilogram_to_centner);
 TINYTEST_END_SUITE();
 
+TINYTEST_START_SUITE(Converter_factory);
+	TINYTEST_ADD_TEST(test_singleton);
+	TINYTEST_ADD_TEST(test_factory);
+TINYTEST_END_SUITE();
+
 TINYTEST_START_MAIN();
   TINYTEST_RUN_SUITE(Money);
   TINYTEST_RUN_SUITE(Temperature);
   TINYTEST_RUN_SUITE(Weight);
+  TINYTEST_RUN_SUITE(Converter_factory);  
 TINYTEST_END_MAIN();
