@@ -20,3 +20,8 @@ std::string euroToRupeeConverter::toString() const{
 void euroToRupeeConverter::print() const{
   std::cout<<this->toString();
 }
+
+std::shared_ptr<converter> euroToRupeeConverter::create()
+{
+	return std::make_shared<euroToRupeeConverter>();
+}

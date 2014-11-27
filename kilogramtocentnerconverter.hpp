@@ -10,6 +10,7 @@ class kilogramToCentnerConverter : public Weightconverter
     double convert(double inKilogram);
     std::string toString() const;
     void print() const;
+    static std::shared_ptr<converter> create();
 };
 
 #endif // KILOGRAMTOCENTNERCONVERTER_H

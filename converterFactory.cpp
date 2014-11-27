@@ -13,12 +13,12 @@ ConverterFactory* ConverterFactory::s_instance = NULL;
 
 ConverterFactory::ConverterFactory() : m{}
 {
-	m.insert(std::make_pair("cToF", cToF));
-	m.insert(std::make_pair("dToE", dToC));
-	m.insert(std::make_pair("eToR", eToR));
-	m.insert(std::make_pair("fToK", fToK));
-	m.insert(std::make_pair("kToC", kToC));
-	m.insert(std::make_pair("kToM", kToM));
+	m.insert(std::make_pair("cToF", celsiusToFahrenheitConverter::create));
+	m.insert(std::make_pair("dToE", dollarToEuroConverter::create));
+	m.insert(std::make_pair("eToR", euroToRupeeConverter::create));
+	m.insert(std::make_pair("fToK", fahrenheitToKelvinConverter::create));
+	m.insert(std::make_pair("kToC", kilogramToCentnerConverter::create));
+	m.insert(std::make_pair("kToM", kilogramToMilligramConverter::create));
 }	
 
 std::shared_ptr<converter> ConverterFactory::create(std::string const& s)
@@ -33,34 +33,4 @@ ConverterFactory* ConverterFactory::instance()
 		s_instance = new ConverterFactory;
 		return s_instance;
 	}
-}
-
-std::shared_ptr<converter> ConverterFactory::cToF()
-{
-	return std::make_shared<celsiusToFahrenheitConverter>();
-}
-
-std::shared_ptr<converter> ConverterFactory::dToC()
-{
-	return std::make_shared<dollarToEuroConverter>();
-}
-
-std::shared_ptr<converter> ConverterFactory::eToR()
-{
-	return std::make_shared<euroToRupeeConverter>();
-}
-
-std::shared_ptr<converter> ConverterFactory::fToK()
-{
-	return std::make_shared<fahrenheitToKelvinConverter>();
-}
-
-std::shared_ptr<converter> ConverterFactory::kToC()
-{
-	return std::make_shared<kilogramToCentnerConverter>();
-}
-
-std::shared_ptr<converter> ConverterFactory::kToM()
-{
-	return std::make_shared<kilogramToMilligramConverter>();
 }
