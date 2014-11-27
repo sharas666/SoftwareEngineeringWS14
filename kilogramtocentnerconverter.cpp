@@ -20,3 +20,8 @@ std::string kilogramToCentnerConverter::toString() const{
 void kilogramToCentnerConverter::print() const{
   std::cout<<this->toString();
 }
+
+std::shared_ptr<converter> kilogramToCentnerConverter::create()
+{
+	return std::make_shared<kilogramToCentnerConverter>();
+}

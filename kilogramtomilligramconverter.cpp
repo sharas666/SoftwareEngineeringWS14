@@ -20,3 +20,8 @@ std::string kilogramToMilligramConverter::toString() const{
 void kilogramToMilligramConverter::print() const{
   std::cout<<this->toString();
 }
+
+std::shared_ptr<converter> kilogramToMilligramConverter::create()
+{
+	return std::make_shared<kilogramToMilligramConverter>();
+}

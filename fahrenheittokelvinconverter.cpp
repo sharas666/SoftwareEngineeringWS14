@@ -20,3 +20,8 @@ std::string fahrenheitToKelvinConverter::toString() const{
 void fahrenheitToKelvinConverter::print() const{
   std::cout<<this->toString();
 }
+
+std::shared_ptr<converter> fahrenheitToKelvinConverter::create()
+{
+	return std::make_shared<fahrenheitToKelvinConverter>();
+}

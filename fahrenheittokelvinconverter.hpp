@@ -10,6 +10,7 @@ class fahrenheitToKelvinConverter : public Temperatureconverter
     double convert(double inFahrenheit);
     std::string toString() const;
     void print() const;
+    static std::shared_ptr<converter> create();
 };
 
 #endif // FAHRENHEITTOKELVINCONVERTER_H

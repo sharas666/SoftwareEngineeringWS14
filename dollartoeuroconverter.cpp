@@ -20,3 +20,8 @@ std::string dollarToEuroConverter::toString() const{
 void dollarToEuroConverter::print() const{
   std::cout<<this->toString();
 }
+
+std::shared_ptr<converter> dollarToEuroConverter::create()
+{
+	return std::make_shared<dollarToEuroConverter>();
+}

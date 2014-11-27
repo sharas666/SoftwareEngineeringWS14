@@ -10,6 +10,7 @@ class euroToRupeeConverter : public Moneyconverter
     double convert(double inEuros);
     std::string toString() const;
     void print() const;
+    static std::shared_ptr<converter> create();
 };
 
 #endif // EUROTORUPEECONVERTER_H

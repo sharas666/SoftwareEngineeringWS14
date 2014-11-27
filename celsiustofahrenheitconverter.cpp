@@ -20,3 +20,8 @@ std::string celsiusToFahrenheitConverter::toString() const{
 void celsiusToFahrenheitConverter::print() const{
   std::cout<<this->toString();
 }
+
+std::shared_ptr<converter> celsiusToFahrenheitConverter::create()
+{
+	return std::make_shared<celsiusToFahrenheitConverter>();
+}
