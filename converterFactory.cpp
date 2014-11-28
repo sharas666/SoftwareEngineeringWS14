@@ -31,6 +31,6 @@ ConverterFactory* ConverterFactory::instance()
 	if(s_instance == NULL)
 	{
 		s_instance = new ConverterFactory;
-		return s_instance;
 	}
+	return s_instance;
 }
