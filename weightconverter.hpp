@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include "converter.hpp"
+#include "decorator.hpp"
 
-class Weightconverter : public converter
+class Weightconverter : public Decorator
 {
   public:
     Weightconverter();

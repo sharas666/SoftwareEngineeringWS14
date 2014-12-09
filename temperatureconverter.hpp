@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include "converter.hpp"
+#include "decorator.hpp"
 
-class Temperatureconverter : public converter
+class Temperatureconverter : public Decorator
 {
   public:
     Temperatureconverter();

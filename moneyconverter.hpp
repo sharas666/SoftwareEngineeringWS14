@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include "converter.hpp"
+#include "decorator.hpp"
 
-class Moneyconverter : public converter
+class Moneyconverter : public Decorator
 {
   public:
     Moneyconverter();
