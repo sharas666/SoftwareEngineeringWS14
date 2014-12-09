@@ -7,6 +7,7 @@ class dollarToEuroConverter : public Moneyconverter
 {
   public:
     dollarToEuroConverter();
+    dollarToEuroConverter(std::shared_ptr<converter> to_decorate) : Moneyconverter{to_decorate}{}
     double convert(double inDollars);
     std::string toString() const;
     void print() const;

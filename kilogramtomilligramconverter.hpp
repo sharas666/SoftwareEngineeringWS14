@@ -7,6 +7,7 @@ class kilogramToMilligramConverter : public Weightconverter
 {
   public:
     kilogramToMilligramConverter();
+    kilogramToMilligramConverter(std::shared_ptr<converter> to_decorate) : Weightconverter{to_decorate}{}
     double convert(double inKilogram);
     std::string toString() const;
     void print() const;

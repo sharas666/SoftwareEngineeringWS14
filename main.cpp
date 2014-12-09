@@ -19,6 +19,7 @@ int main(int argc, char* argv[])
 
 
 	std::shared_ptr<converter> a = std::make_shared<celsiusToFahrenheitConverter>(std::make_shared<fahrenheitToKelvinConverter>());
+	std::cout << a->convert(25.12) << std::endl;
   
   return 0;
 }

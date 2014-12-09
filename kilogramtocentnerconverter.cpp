@@ -10,7 +10,11 @@ kilogramToCentnerConverter::kilogramToCentnerConverter()
  *Out: Centner value of input Kilogram as of 04.11.14
  */
 double kilogramToCentnerConverter::convert(double inputKilogram){
-  return inputKilogram * 0.02;
+  
+    if(m_to_decorate == nullptr)
+		return inputKilogram * 0.02;
+	else
+		return m_to_decorate->convert(inputKilogram * 0.02);
 }
 
 std::string kilogramToCentnerConverter::toString() const{

@@ -10,7 +10,11 @@ celsiusToFahrenheitConverter::celsiusToFahrenheitConverter()
  *Out: Fahrenheit value of input celsius as of 04.11.14
  */
 double celsiusToFahrenheitConverter::convert(double inputCelsius){
-  return inputCelsius * 1.8 + 32;
+
+   	if(m_to_decorate == nullptr)
+		return inputCelsius * 1.8 + 32;
+	else
+		return m_to_decorate->convert(inputCelsius * 1.8 + 32);
 }
 
 std::string celsiusToFahrenheitConverter::toString() const{
