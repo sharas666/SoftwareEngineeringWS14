@@ -1,5 +1,8 @@
 #include <deque>
 #include <sstream>
+#include <cctype>
+#include <algorithm>
+#include <string>
 
 #include "celsiustofahrenheitconverter.hpp"
 #include "dollartoeuroconverter.hpp"
@@ -11,6 +14,12 @@
 #include "decorator.hpp"
 #include "inverse.hpp"
 #include "command.hpp"
+
+
+bool is_digits(const std::string &str)
+{
+return std::all_of(str.begin(), str.end(), ::isdigit);
+}
 
 int main(int argc, char* argv[])
 {
@@ -24,36 +33,39 @@ int main(int argc, char* argv[])
 
  
   std::deque<Command> commandList{};
-  std::string cmd;
-  int value;
+
+  std::string converter_type;
+  std::string value;
 
   for(std::string line; std::getline(std::cin, line);)
   {
-    std::stringstream str{line};
-    str >> cmd >> value;
+    std::stringstream cmd{line};  
+    cmd >> converter_type >> value;
 
-    std::cout << line << std::endl;
-    commandList.push_back({cmd,value});
+    if(is_digits(value))
+    {
+      commandList.push_back({converter_type, stod(value)});      
+    }
+    else
+    {
+      std::cout << "<converter type> <value>" << std::endl;
+      return 0;
+    }
   }
 
   ConverterFactory* cFactory;
   cFactory = cFactory->instance();
 
+  std::shared_ptr<converter> new_converter;
 
   for(auto i : commandList)
   {
-    std::cout << cFactory->create(i.m_command)->convert(i.m_value) << std::endl;
+      new_converter = cFactory->create(i.m_command);
+      if(new_converter)
+      {
+        std::cout << new_converter->convert(i.m_value) << std::endl;
+      }
   }
-
-
-
-	std::shared_ptr<converter> a = std::make_shared<Inverse>(std::make_shared<dollarToEuroConverter>());
-	std::shared_ptr<converter> b = std::make_shared<dollarToEuroConverter>();
-  std::shared_ptr<converter> c = std::make_shared<Inverse>(std::make_shared<celsiusToFahrenheitConverter>());
-
- //  std::cout << b->convert(a->convert(25.12)) << std::endl;
-	// std::cout << c->convert(25.12) << std::endl;
-  
   return 0;
 }
 

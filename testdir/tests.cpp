@@ -89,8 +89,8 @@ int test_factory()
 {
 	ConverterFactory* cFactory;
 	cFactory = cFactory->instance();
-	auto c1 = cFactory->create("cToF");
-	auto c2 = cFactory->create("cToF");
+	auto c1 = cFactory->create("ctof");
+	auto c2 = cFactory->create("ctof");
 	TINYTEST_ASSERT(c1 != c2);
 
 	return 1;
@@ -100,6 +100,27 @@ int test_decorator()
 {
 	std::shared_ptr<converter> a = std::make_shared<celsiusToFahrenheitConverter>(std::make_shared<fahrenheitToKelvinConverter>());
 	TINYTEST_EQUAL_EPSILON(298.27, a->convert(25.12));
+
+	return 1;
+}
+
+int test_inverse()
+{
+	std::shared_ptr<converter> a = std::make_shared<Inverse>(std::make_shared<dollarToEuroConverter>());
+	std::shared_ptr<converter> b = std::make_shared<dollarToEuroConverter>();
+
+  	TINYTEST_EQUAL_EPSILON(25.12, b->convert(a->convert(25.12)));
+
+  	return 1;
+}
+
+int test_inverse_temperature()
+{
+	std::shared_ptr<converter> c = std::make_shared<Inverse>(std::make_shared<celsiusToFahrenheitConverter>());
+
+  	TINYTEST_EQUAL_EPSILON(0 , c->convert(25.12));
+
+  	return 1;
 }
 
 
@@ -125,6 +146,8 @@ TINYTEST_END_SUITE();
 
 TINYTEST_START_SUITE(Decorator);
 	TINYTEST_ADD_TEST(test_decorator);
+	TINYTEST_ADD_TEST(test_inverse);
+	TINYTEST_ADD_TEST(test_inverse_temperature);
 TINYTEST_END_SUITE();
 
 

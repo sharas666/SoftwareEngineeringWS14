@@ -13,17 +13,22 @@ ConverterFactory* ConverterFactory::s_instance = NULL;
 
 ConverterFactory::ConverterFactory() : m{}
 {
-	m.insert(std::make_pair("cToF", celsiusToFahrenheitConverter::create));
-	m.insert(std::make_pair("dToE", dollarToEuroConverter::create));
-	m.insert(std::make_pair("eToR", euroToRupeeConverter::create));
-	m.insert(std::make_pair("fToK", fahrenheitToKelvinConverter::create));
-	m.insert(std::make_pair("kToC", kilogramToCentnerConverter::create));
-	m.insert(std::make_pair("kToM", kilogramToMilligramConverter::create));
+	m.insert(std::make_pair("ctof", celsiusToFahrenheitConverter::create));
+	m.insert(std::make_pair("dtoe", dollarToEuroConverter::create));
+	m.insert(std::make_pair("etor", euroToRupeeConverter::create));
+	m.insert(std::make_pair("ftok", fahrenheitToKelvinConverter::create));
+	m.insert(std::make_pair("ktoc", kilogramToCentnerConverter::create));
+	m.insert(std::make_pair("ktom", kilogramToMilligramConverter::create));	
 }	
 
 std::shared_ptr<converter> ConverterFactory::create(std::string const& s)
 {
-	return m[s]();
+	if(m.find(s) != m.end())
+	{
+		return m[s]();
+	}
+	std::cout << "command unknown" << std::endl;
+	return nullptr;
 }
 
 ConverterFactory* ConverterFactory::instance()
