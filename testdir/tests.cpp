@@ -96,6 +96,12 @@ int test_factory()
 	return 1;
 }
 
+int test_decorator()
+{
+	std::shared_ptr<converter> a = std::make_shared<celsiusToFahrenheitConverter>(std::make_shared<fahrenheitToKelvinConverter>());
+	TINYTEST_EQUAL_EPSILON(298.27, a->convert(25.12));
+}
+
 
 TINYTEST_START_SUITE(Money);
 	TINYTEST_ADD_TEST(test_dollar_to_euro);
@@ -117,9 +123,15 @@ TINYTEST_START_SUITE(Converter_factory);
 	TINYTEST_ADD_TEST(test_factory);
 TINYTEST_END_SUITE();
 
+TINYTEST_START_SUITE(Decorator);
+	TINYTEST_ADD_TEST(test_decorator);
+TINYTEST_END_SUITE();
+
+
 TINYTEST_START_MAIN();
   TINYTEST_RUN_SUITE(Money);
   TINYTEST_RUN_SUITE(Temperature);
   TINYTEST_RUN_SUITE(Weight);
   TINYTEST_RUN_SUITE(Converter_factory);  
+  TINYTEST_RUN_SUITE(Decorator);  
 TINYTEST_END_MAIN();
