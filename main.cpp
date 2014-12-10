@@ -6,6 +6,7 @@
 #include "kilogramtocentnerconverter.hpp"
 #include "converterFactory.hpp"
 #include "decorator.hpp"
+#include "inverse.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -18,8 +19,10 @@ int main(int argc, char* argv[])
   // std::cout << output << std::endl;
 
 
-	std::shared_ptr<converter> a = std::make_shared<celsiusToFahrenheitConverter>(std::make_shared<fahrenheitToKelvinConverter>());
-	std::cout << a->convert(25.12) << std::endl;
+	std::shared_ptr<converter> a = std::make_shared<Inverse>(std::make_shared<dollarToEuroConverter>());
+	std::shared_ptr<converter> b = std::make_shared<dollarToEuroConverter>();
+
+	std::cout << b->convert(a->convert(25.12)) << std::endl;
   
   return 0;
 }
