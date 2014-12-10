@@ -1,9 +1,10 @@
 #include "inverse.hpp"
+#include "temperatureconverter.hpp"
 #include <memory>
 
 double Inverse::convert(double inValue)
 {
-	if(std::shared_ptr<Temperatureconverter> to_check = std::dynamic_pointer_cast<Temperatureconverter>(m_to_decorate))
+	if(/*std::shared_ptr<Temperatureconverter> to_check = */std::dynamic_pointer_cast<Temperatureconverter>(m_to_decorate))
 	{
 		std::cout << "temperature not invertable" << std::endl;
 		return 0;
