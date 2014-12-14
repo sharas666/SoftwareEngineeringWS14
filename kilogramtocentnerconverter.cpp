@@ -14,7 +14,7 @@ double kilogramToCentnerConverter::convert(double inputKilogram){
     if(m_to_decorate == nullptr)
 		return inputKilogram * 0.02;
 	else
-		return m_to_decorate->convert(inputKilogram * 0.02);
+		return m_to_decorate->convert(inputKilogram) * 0.02;
 }
 
 std::string kilogramToCentnerConverter::toString() const{

@@ -3,14 +3,12 @@
 
 struct Command
 {
-	Command(std::string cmd, double value):
-		m_command{cmd},
-		m_value{value}
+	Command(std::string const& cmd):
+		m_command{cmd}
 	{}
 
 
 	std::string m_command;
-	double m_value;
 };
 
 #endif //COMMAND_HPP

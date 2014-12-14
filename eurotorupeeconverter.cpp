@@ -14,7 +14,7 @@ double euroToRupeeConverter::convert(double inputEuros){
     if(m_to_decorate == nullptr)
 		return inputEuros * 76.83;
 	else
-		return m_to_decorate->convert(inputEuros * 76.83);
+		return m_to_decorate->convert(inputEuros) * 76.83;
 }
 
 std::string euroToRupeeConverter::toString() const{

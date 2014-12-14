@@ -14,7 +14,7 @@ double celsiusToFahrenheitConverter::convert(double inputCelsius){
    	if(m_to_decorate == nullptr)
 		return inputCelsius * 1.8 + 32;
 	else
-		return m_to_decorate->convert(inputCelsius * 1.8 + 32);
+		return m_to_decorate->convert(inputCelsius) * 1.8 + 32;
 }
 
 std::string celsiusToFahrenheitConverter::toString() const{

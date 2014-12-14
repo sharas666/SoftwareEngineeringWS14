@@ -15,7 +15,7 @@ double dollarToEuroConverter::convert(double inputDollars){
   	if(m_to_decorate == nullptr)
 		return inputDollars*0.78224;
 	else
-		return m_to_decorate->convert(inputDollars*0.78224);
+		return m_to_decorate->convert(inputDollars)*0.78224;
 }
 
 std::string dollarToEuroConverter::toString() const{

@@ -11,7 +11,7 @@ double fahrenheitToKelvinConverter::convert(double inputFahrenheit){
 	if(m_to_decorate == nullptr)
 		return (inputFahrenheit + 459.67) / 1.8;
 	else
-		return m_to_decorate->convert(((inputFahrenheit + 459.67) / 1.8));
+		return (m_to_decorate->convert(inputFahrenheit) + 459.67) / 1.8;
 }
 
 std::string fahrenheitToKelvinConverter::toString() const{

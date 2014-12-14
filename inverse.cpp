@@ -4,20 +4,40 @@
 
 double Inverse::convert(double inValue)
 {
-	if(std::dynamic_pointer_cast<Temperatureconverter>(m_to_decorate))
+	if (m_to_decorate)
 	{
-		std::cout << "temperature not invertable ";
+		if(std::dynamic_pointer_cast<Temperatureconverter>(m_to_decorate))
+		{
+			std::cout << "temperature not invertable ";
+			return 0;
+		}
+		return inValue * inValue / (m_to_decorate->convert(inValue));
+	}
+	else
+	{
+		std::cout << "error" << std::endl;
 		return 0;
 	}
-	return inValue * inValue / (m_to_decorate->convert(inValue));
 }
 
 std::string Inverse::toString() const
 {
-	return "Inverse " + m_to_decorate->toString();
+	if (m_to_decorate)
+	{
+		return "Inverse " + m_to_decorate->toString();
+	}
+	else
+	{
+		return "error";
+	}
 }
    
 void Inverse::print() const
 {
 	std::cout<<this->toString();
+}
+
+std::shared_ptr<converter> Inverse::create()
+{
+	return std::make_shared<Inverse>();
 }

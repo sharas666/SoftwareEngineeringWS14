@@ -14,7 +14,7 @@ double kilogramToMilligramConverter::convert(double inputKilogram){
     if(m_to_decorate == nullptr)
 		return inputKilogram * 1000000;
 	else
-		return m_to_decorate->convert(inputKilogram * 1000000);
+		return m_to_decorate->convert(inputKilogram) * 1000000;
 }
 
 std::string kilogramToMilligramConverter::toString() const{

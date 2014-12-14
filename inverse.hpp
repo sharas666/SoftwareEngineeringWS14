@@ -1,15 +1,17 @@
 #ifndef INVERSE_HPP
 #define INVERSE_HPP
 
-#include "decorator.hpp"
+#include "converter.hpp"
 
-class Inverse : public Decorator
+class Inverse : public converter
 {
 	public:
-		Inverse(std::shared_ptr<converter> to_invert) : Decorator{to_invert}{}
+		Inverse() : converter{}{}
+		Inverse(std::shared_ptr<converter> to_invert) : converter{to_invert}{}
 		double convert(double inValue);
 	    std::string toString() const;
 	    void print() const;
+	    static std::shared_ptr<converter> create();
 	
 };
 
