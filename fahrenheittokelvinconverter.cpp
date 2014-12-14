@@ -15,7 +15,10 @@ double fahrenheitToKelvinConverter::convert(double inputFahrenheit){
 }
 
 std::string fahrenheitToKelvinConverter::toString() const{
-  return "Fahrenheit to Kelvin Converter";
+	if(m_to_decorate)
+  		return m_to_decorate->toString() +" Fahrenheit to Kelvin Converter ";
+  	else
+  		return " Fahrenheit to Kelvin Converter ";
 }
 
 void fahrenheitToKelvinConverter::print() const{

@@ -19,11 +19,14 @@ double dollarToEuroConverter::convert(double inputDollars){
 }
 
 std::string dollarToEuroConverter::toString() const{
-  return "Dollar to Euro Converter";
+	if(m_to_decorate)
+  		return m_to_decorate->toString() +" Dollar to Euro Converter ";
+  	else
+  		return " Dollar to Euro Converter ";
 }
 
 void dollarToEuroConverter::print() const{
-  std::cout<<this->toString();
+  std::cout<< this->toString();
 }
 
 std::shared_ptr<converter> dollarToEuroConverter::create()

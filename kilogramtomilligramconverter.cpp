@@ -18,7 +18,10 @@ double kilogramToMilligramConverter::convert(double inputKilogram){
 }
 
 std::string kilogramToMilligramConverter::toString() const{
-  return "Kilogram to Milligram Converter";
+	if(m_to_decorate)
+  		return m_to_decorate->toString() +" Kilogram to Milligram Converter ";
+  	else
+  		return " Kilogram to Milligram Converter ";
 }
 
 void kilogramToMilligramConverter::print() const{

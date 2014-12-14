@@ -18,7 +18,10 @@ double euroToRupeeConverter::convert(double inputEuros){
 }
 
 std::string euroToRupeeConverter::toString() const{
-  return "Euro to Rupee Converter";
+	if(m_to_decorate)
+  		return m_to_decorate->toString() +" Euro to Rupee Converter ";
+  	else
+  		return " Euro to Rupee Converter ";
 }
 
 void euroToRupeeConverter::print() const{

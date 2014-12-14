@@ -18,7 +18,10 @@ double kilogramToCentnerConverter::convert(double inputKilogram){
 }
 
 std::string kilogramToCentnerConverter::toString() const{
-  return "Kilogram to Centner Converter";
+	if(m_to_decorate)
+  		return m_to_decorate->toString() +" Kilogram to Centner Converter ";
+  	else
+  		return " Kilogram to Centner Converter ";
 }
 
 void kilogramToCentnerConverter::print() const{
