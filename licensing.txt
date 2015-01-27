@@ -1,0 +1,6 @@
+Wir haben anhand der Website http://choosealicense.com/licenses/ verschiedene populäre Lizenzen verglichen und wählten die GNU GPL v3.0-Lizenz (http://choosealicense.com/licenses/gpl-3.0/).
+Der Vorteil dieser Lizenz ist, dass die Nutzer des Source-Codes ihren Source-Code ebenfalls veröffentlichen müssen. So können alle von diesen Modifizierungen profitieren.
+Außerdem müssen größere Änderungen am Code kenntlich gemacht werden.
+Wie die meisten anderen Open-Source Lizenzen verhindert sie, dass wir für durch das Programm
+auftretende Schäden verantwortlich gemacht werden können.
+In den meisten anderen Punkten gibt sie Nutzern des Codes die gleichen Rechte, wie andere populäre Open-Source Lizenzen.

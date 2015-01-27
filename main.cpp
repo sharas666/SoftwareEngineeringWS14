@@ -1,3 +1,30 @@
+/* 
+This program is used to convert different temperature,
+money and weight units into each other
+
+Copyright (C) 2015 Magdalena Keil, Joshua König
+ */
+
+/*
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+/*
+ Contact us at magdalena.keil@uni-weimar.de or joshua.david.koenig@uni-weimar.de
+ */
+
+
 #include <deque>
 #include <sstream>
 #include <cctype>
@@ -70,6 +97,11 @@ void run_commands(ConverterFactory* cFactory, std::stringstream &cmd,
 
 int main(int argc, char* argv[])
 {
+  std::cout << "\n";
+  std::cout << "Copyright (C) 2015 Magdalena Keil, Joshua König\n";
+  std::cout << "This program comes with ABSOLUTELY NO WARRANTY;\n";
+  std::cout << "This is free software, and you are welcome to redistribute it";
+  std::cout << "under certain conditions;\n\n";
   std::cout << "<converter> [inverse / <converter> ...] <value>\n";
   std::cout << "converter: ctof, dtoe, etor, ftok, ktom, ktoc\n";
   std::deque<Command> commandList{};
