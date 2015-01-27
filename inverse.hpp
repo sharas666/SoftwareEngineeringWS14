@@ -6,8 +6,8 @@
 class Inverse : public converter
 {
 	public:
-		Inverse() : converter{}{}
-		Inverse(std::shared_ptr<converter> to_invert) : converter{to_invert}{}
+		Inverse() : converter{0}{}
+		Inverse(std::shared_ptr<converter> to_invert) : converter{to_invert, 0}{}
 		double convert(double inValue);
 	    std::string toString() const;
 	    void print() const;

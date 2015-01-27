@@ -2,9 +2,7 @@
 
 #include <string>
 
-dollarToEuroConverter::dollarToEuroConverter()
-{
-}
+
 
 /*In: double value of dollars
  *Out: Euro value of input dollars as of 19.10.14

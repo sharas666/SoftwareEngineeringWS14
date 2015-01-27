@@ -1,35 +1,31 @@
 #include "inverse.hpp"
 #include "temperatureconverter.hpp"
 #include <memory>
+#include <stdexcept>
 
 double Inverse::convert(double inValue)
 {
-	if (m_to_decorate)
+	try
 	{
+		if(!m_to_decorate)
+		{
+			throw std::runtime_error("\n nothing to decorate\n <converter> inverse <value>\n");
+		}
 		if(std::dynamic_pointer_cast<Temperatureconverter>(m_to_decorate))
 		{
-			std::cout << "temperature not invertable ";
-			return 0;
+			throw std::runtime_error("\n temperature not invertable\n");
 		}
 		return inValue * inValue / (m_to_decorate->convert(inValue));
 	}
-	else
+	catch(std::exception & e)
 	{
-		std::cout << "error" << std::endl;
-		return 0;
+	  std::cout << e.what() << "\n";
 	}
 }
 
 std::string Inverse::toString() const
 {
-	if (m_to_decorate)
-	{
-		return "Inverse " + m_to_decorate->toString();
-	}
-	else
-	{
-		return "error";
-	}
+	return "Inverse " + m_to_decorate->toString();
 }
    
 void Inverse::print() const

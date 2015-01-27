@@ -6,8 +6,8 @@
 class fahrenheitToKelvinConverter : public Temperatureconverter
 {
   public:
-    fahrenheitToKelvinConverter(){}
-    fahrenheitToKelvinConverter(std::shared_ptr<converter> to_decorate) : Temperatureconverter{to_decorate}{}
+    fahrenheitToKelvinConverter() : Temperatureconverter{-459.67}{}
+    fahrenheitToKelvinConverter(std::shared_ptr<converter> to_decorate) : Temperatureconverter{to_decorate,-459.67}{}
     double convert(double inFahrenheit);
     std::string toString() const;
     void print() const;

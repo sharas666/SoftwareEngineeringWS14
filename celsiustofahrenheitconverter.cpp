@@ -2,9 +2,7 @@
 
 #include <string>
 
-celsiusToFahrenheitConverter::celsiusToFahrenheitConverter()
-{
-}
+
 
 /*In: double value of celsius
  *Out: Fahrenheit value of input celsius as of 04.11.14

@@ -2,10 +2,6 @@
 
 #include <string>
 
-euroToRupeeConverter::euroToRupeeConverter()
-{
-}
-
 /*In: double value of euros
  *Out: Rupee value of input Euros as of 04.11.14
  */

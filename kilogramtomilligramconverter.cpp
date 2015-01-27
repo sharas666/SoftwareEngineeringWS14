@@ -2,9 +2,7 @@
 
 #include <string>
 
-kilogramToMilligramConverter::kilogramToMilligramConverter()
-{
-}
+
 
 /*In: double value of Kilogram
  *Out: Milligram value of input Kilogram as of 04.11.14

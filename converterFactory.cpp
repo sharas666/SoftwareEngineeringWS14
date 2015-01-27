@@ -7,6 +7,7 @@
 #include "kilogramtocentnerconverter.hpp"
 #include "inverse.hpp"
 #include <iostream>
+#include <stdexcept>
 
 
 
@@ -25,12 +26,19 @@ ConverterFactory::ConverterFactory() : m{}
 
 std::shared_ptr<converter> ConverterFactory::create(std::string const& s)
 {
-	if(m.find(s) != m.end())
-	{
+	try
+    {
+		if(m.find(s) == m.end())
+		{
+			throw std::runtime_error("\n unknown command\n");
+		}
 		return m[s]();
-	}
-	std::cout << "command unknown" << std::endl;
-	return nullptr;
+    }
+    catch(std::exception & e)
+    {
+      std::cout << e.what() << "\n";
+    }
+    return nullptr;
 }
 
 ConverterFactory* ConverterFactory::instance()

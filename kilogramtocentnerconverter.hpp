@@ -6,7 +6,7 @@
 class kilogramToCentnerConverter : public Weightconverter
 {
   public:
-    kilogramToCentnerConverter();
+    kilogramToCentnerConverter(): Weightconverter{}{}
     kilogramToCentnerConverter(std::shared_ptr<converter> to_decorate) : Weightconverter{to_decorate}{}
     double convert(double inKilogram);
     std::string toString() const;

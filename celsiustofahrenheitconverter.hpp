@@ -6,8 +6,8 @@
 class celsiusToFahrenheitConverter : public Temperatureconverter
 {
   public:
-    celsiusToFahrenheitConverter();
-    celsiusToFahrenheitConverter(std::shared_ptr<converter> to_decorate) : Temperatureconverter{to_decorate}{}
+    celsiusToFahrenheitConverter() : Temperatureconverter{-273.15}{};
+    celsiusToFahrenheitConverter(std::shared_ptr<converter> to_decorate) : Temperatureconverter{to_decorate, -273.15}{}
     double convert(double inCelsius);
     std::string toString() const;
     void print() const;
